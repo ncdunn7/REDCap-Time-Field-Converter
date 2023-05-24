@@ -10,9 +10,9 @@ REDCap field validation does not have an option to validate time fields for AM/P
 1. **Primary Variable:** a text box field for the original item, validated in the time format of HH:MM.
   - In this example, I will be naming this variable, **var**
 2. **Hour Variable:** a calculated field that takes the 2 leftmost characters in **var** (i.e., HH), checks whether the first character is a 0. If the leading number is 0, it transforms the second character in the **var** text string (i.e., H **H** ) and turns it into a number. If the leading number is not a 0, it transforms the first 2 characters in **var** (i.e., **HH** ) into a number.
-  - In this example, I will be naming this variable, **var\_h**
+  - In this example, I will be naming this variable, **var_h**
 3. **Conversion Variable:** an unvalidated text box field where the time is converted to a 12-hour clock.
-  - In this example, I will be naming this variable, **var\_ampm**
+  - In this example, I will be naming this variable, **var_ampm**
 
 **Instructions**
 
@@ -20,7 +20,7 @@ REDCap field validation does not have an option to validate time fields for AM/P
 
 ![](RackMultipart20230524-1-e0qjh0_html_84ffcd355785264.png)
 
-1. Now, let's add our Hour Variable and Field ( **var\_h** ):
+1. Now, let's add our Hour Variable and Field ( **var_h** ):
   - Set the field type to **calculated field**.
   - In the **Calculation Equation** box, you will be copy/pasting your first logic block:
 
@@ -28,14 +28,15 @@ REDCap field validation does not have an option to validate time fields for AM/P
 if(left([var],1)="0",mid([var],2,1),left([var],2))
 ```
 
-- ![](RackMultipart20230524-1-e0qjh0_html_7c4c12a61adff512.png)If you did everything correctly, your **var\_h** variable should look like this:
+- ![](RackMultipart20230524-1-e0qjh0_html_7c4c12a61adff512.png)If you did everything correctly, your **var_h** variable should look like this:
 
-1. Finally, let's create our Conversion Variable ( **var\_ampm** )
+1. Finally, let's create our Conversion Variable ( **var_ampm** )
   - Set the field type to **Text Box**
   - In the **Action Tags/Field Annotation** box, you will be copy/pasting the following logic:
 
 ```
-@CALCTEXT(if([var\_h]\<\>0 AND [var\_h]\< 10,concat(mid([var],2,1),":",right([var],2)," ","AM"),if([var\_h]=10,concat("10",":",right([var],2)," ","AM"),if([var\_h]=11,concat("11",":",right([var],2)," ","AM"),if([var\_h]=0,concat("12",":",right([var],2)," ","AM"),if([var\_h]=12,concat("12",":",right([var],2)," ","PM"),if([var\_h]=13,concat("1",":",right([var],2)," ","PM"),if([var\_h]=14,concat("2",":",right([var],2)," ","PM"),if([var\_h]=15,concat("3",":",right([var],2)," ","PM"),if([var\_h]=16,concat("4",":",right([var],2)," ","PM"),if([var\_h]=17,concat("5",":",right([var],2)," ","PM"),if([var\_h]=18,concat("6",":",right([var],2)," ","PM"),if([var\_h]=19,concat("7",":",right([var],2)," ","PM"),if([var\_h]=20,concat("8",":",right([var],2)," ","PM"),if([var\_h]=21,concat("9",":",right([var],2)," ","PM"),if([var\_h]=22,concat("10",":",right([var],2)," ","PM"),if([var\_h]=23,concat("11",":",right([var],2)," ","PM"),if([var\_h]=24,concat("12",":",right([var],2)," ","AM"),""))))))))))))))))))
+@CALCTEXT(if([var_h]<>0 AND [var_h]< 10,concat(mid([var],2,1),":",right([var],2)," ","AM"),if([var_h]=10,concat("10",":",right([var],2)," ","AM"),if([var_h]=11,concat("11",":",right([var],2)," ","AM"),if([var_h]=0,concat("12",":",right([var],2)," ","AM"),if([var_h]=12,concat("12",":",right([var],2)," ","PM"),if([var_h]=13,concat("1",":",right([var],2)," ","PM"),if([var_h]=14,concat("2",":",right([var],2)," ","PM"),if([var_h]=15,concat("3",":",right([var],2)," ","PM"),if([var_h]=16,concat("4",":",right([var],2)," ","PM"),if([var_h]=17,concat("5",":",right([var],2)," ","PM"),if([var_h]=18,concat("6",":",right([var],2)," ","PM"),if([var_h]=19,concat("7",":",right([var],2)," ","PM"),if([var_h]=20,concat("8",":",right([var],2)," ","PM"),if([var_h]=21,concat("9",":",right([var],2)," ","PM"),if([var_h]=22,concat("10",":",right([var],2)," ","PM"),if([var_h]=23,concat("11",":",right([var],2)," ","PM"),"")))))))))))))))))
+
 ```
 
 - If you did everything correctly, your Conversion Variable should look like this:
