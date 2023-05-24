@@ -18,7 +18,7 @@ REDCap field validation does not have an option to validate time fields for AM/P
 
 1. First, if you have not created your Primary Variable and Field ( **var** ), create it now. Make sure to set the validation as **HH:MM**.
 
-![](RackMultipart20230524-1-e0qjh0_html_84ffcd355785264.png)
+![Create a Primary Field](https://github.com/[ncdunn7]/[redcap-time-field-converter]/blob/main/assets/image1.png?raw=true)
 
 1. Now, let's add our Hour Variable and Field ( **var_h** ):
   - Set the field type to **calculated field**.
@@ -28,7 +28,9 @@ REDCap field validation does not have an option to validate time fields for AM/P
 if(left([var],1)="0",mid([var],2,1),left([var],2))
 ```
 
-- ![](RackMultipart20230524-1-e0qjh0_html_7c4c12a61adff512.png)If you did everything correctly, your **var_h** variable should look like this:
+- If you did everything correctly, your **var_h** variable should look like this:
+
+![Create var_h field](https://github.com/[ncdunn7]/[redcap-time-field-converter]/blob/main/assets/image2.png?raw=true)
 
 1. Finally, let's create our Conversion Variable ( **var_ampm** )
   - Set the field type to **Text Box**
@@ -41,11 +43,11 @@ if(left([var],1)="0",mid([var],2,1),left([var],2))
 
 - If you did everything correctly, your Conversion Variable should look like this:
 
-![](RackMultipart20230524-1-e0qjh0_html_9a5c9da042432cf4.png)
+![Conversion Variable](https://github.com/[ncdunn7]/[redcap-time-field-converter]/blob/main/assets/image3.png?raw=true)
 
 1. With those 3 variables complete, we can test now to make sure the conversion is working. Let's add a new record and type a time into the Primary Variable field:
 
-![](RackMultipart20230524-1-e0qjh0_html_bcd35ab55359d8b6.png)
+![Testing the new conversion field](https://github.com/[ncdunn7]/[redcap-time-field-converter]/blob/main/assets/image4.png?raw=true)
 
 1. Success! Now, let's clean up our variables so that it only the Primary Variable and Conversion Variable are visible.
   - Return to Designer
@@ -61,7 +63,7 @@ Now you have the tools to set this conversion up in any REDCap project. If you a
   - Type **your Primary Variable name** into the **replace with** text box.
   - Click the **Replace all** button at the bottom.
 
-![](RackMultipart20230524-1-e0qjh0_html_8766bb61f8259823.png)
+![Using Word to change the variable names](https://github.com/[ncdunn7]/[redcap-time-field-converter]/blob/main/assets/image5.png?raw=true)
 
 1. All of the **var** variables should have been replaced with your primary variable name. Rinse and repeat for other variables.
 2. You can now copy/paste that code directly into REDCap!
