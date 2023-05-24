@@ -30,7 +30,7 @@ if(left([var],1)="0",mid([var],2,1),left([var],2))
 
 - If you did everything correctly, your **var_h** variable should look like this:
 
-![Create var_h field](https://github.com/[ncdunn7]/[redcap-time-field-converter]/blob/main/assets/image2.png?raw=true)
+![Create var_h field](https://github.com/ncdunn7/REDCap-Time-Field-Converter/blob/main/assets/image2.png)
 
 1. Finally, let's create our Conversion Variable ( **var_ampm** )
   - Set the field type to **Text Box**
@@ -43,11 +43,11 @@ if(left([var],1)="0",mid([var],2,1),left([var],2))
 
 - If you did everything correctly, your Conversion Variable should look like this:
 
-![Conversion Variable](https://github.com/[ncdunn7]/[redcap-time-field-converter]/blob/main/assets/image3.png?raw=true)
+![Conversion Variable](https://github.com/ncdunn7/REDCap-Time-Field-Converter/blob/main/assets/image3.png)
 
 1. With those 3 variables complete, we can test now to make sure the conversion is working. Let's add a new record and type a time into the Primary Variable field:
 
-![Testing the new conversion field](https://github.com/[ncdunn7]/[redcap-time-field-converter]/blob/main/assets/image4.png?raw=true)
+![Testing the new conversion field](https://github.com/ncdunn7/REDCap-Time-Field-Converter/blob/main/assets/image4.png)
 
 1. Success! Now, let's clean up our variables so that it only the Primary Variable and Conversion Variable are visible.
   - Return to Designer
@@ -63,7 +63,7 @@ Now you have the tools to set this conversion up in any REDCap project. If you a
   - Type **your Primary Variable name** into the **replace with** text box.
   - Click the **Replace all** button at the bottom.
 
-![Using Word to change the variable names](https://github.com/[ncdunn7]/[redcap-time-field-converter]/blob/main/assets/image5.png?raw=true)
+![Using Word to change the variable names](https://github.com/ncdunn7/REDCap-Time-Field-Converter/blob/main/assets/image5.png)
 
 1. All of the **var** variables should have been replaced with your primary variable name. Rinse and repeat for other variables.
 2. You can now copy/paste that code directly into REDCap!
