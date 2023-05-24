@@ -18,7 +18,7 @@ REDCap field validation does not have an option to validate time fields for AM/P
 
 1. First, if you have not created your Primary Variable and Field ( **var** ), create it now. Make sure to set the validation as **HH:MM**.
 
-![Create a Primary Field](https://github.com/[ncdunn7]/[redcap-time-field-converter]/blob/main/assets/image1.png?raw=true)
+![Create a Primary Field](https://github.com/ncdunn7/REDCap-Time-Field-Converter/blob/main/assets/image1.png)
 
 1. Now, let's add our Hour Variable and Field ( **var_h** ):
   - Set the field type to **calculated field**.
